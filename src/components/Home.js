@@ -103,25 +103,42 @@ const Home = () => {
         </div>
       </section>
       <section className='bg-lila-fondo'>
-        <div className='container mx-auto py-16'>
+        <div className='container mx-auto py-16 text-center'>
           <div className='text-3xl font-bold text-morado-primario pb-2' >Un servicio innovador y parte del mundo digital</div>
           <div className='text-2xl font-bold text-verde-secundario'>Nuestro compromiso, tu privacidad</div>
-          <div className='flex flex-col'>
-            <div className='flex flex-row'>
-              <div className='flex flex-col'>
-                <div>imagen</div>
-                <div className='text-2xl text-morado-primario'>Validamos tu identidad</div>
+          <div className='flex flex-col pt-12'>
+            <div className='flex flex-row justify-evenly'>
+              <div className='flex flex-col max-w-sm'>
+                <div className='mx-auto pb-6'><img src='/fingerprint.png' alt='fingerprint' /></div>
+                <div className='text-2xl text-morado-primario pb-2'>Validamos tu identidad</div>
                 <div className='text-gris-80'>A través de nuestra plataforma validamos tu identidad para que accedas a mayor cantidad de productos y servicios.</div>
               </div>
-              <div className='flex flex-col'>
-                <div>imagen</div>
-                <div className='text-2xl text-morado-primario'>Validamos tu identidad</div>
+              <div className='flex flex-col max-w-sm'>
+                <div className='mx-auto pb-6'><img src='/lock.png' alt='lock' /></div>
+                <div className='text-2xl text-morado-primario pb-2'>Validamos tu identidad</div>
+                <div className='text-gris-80'>Resguardamos la información que compartas con nosotros, haciendo uso de altos estándares de seguridad.</div>
+              </div>
+              <div className='flex flex-col max-w-sm'>
+                <div className='mx-auto pb-6'><img src='/share.png' alt='share' /></div>
+                <div className='text-2xl text-morado-primario pb-2'>Validamos tu identidad</div>
+                <div className='text-gris-80'>Tu información será tratada por nosotros y por aquellas empresas con quienes tú decidas compartir tus datos.</div>
+              </div>
+            </div>
+            <div className='flex flex-row pt-16 justify-evenly'>
+              <div className='flex flex-col max-w-sm'>
+                <div className='mx-auto pb-6'><img src='/mail.png' alt='mail' /></div>
+                <div className='text-2xl text-morado-primario pb-2'>Validamos tu identidad</div>
                 <div className='text-gris-80'>A través de nuestra plataforma validamos tu identidad para que accedas a mayor cantidad de productos y servicios.</div>
               </div>
-              <div className='flex flex-col'>
-                <div>imagen</div>
-                <div className='text-2xl text-morado-primario'>Validamos tu identidad</div>
-                <div className='text-gris-80'>A través de nuestra plataforma validamos tu identidad para que accedas a mayor cantidad de productos y servicios.</div>
+              <div className='flex flex-col max-w-sm'>
+                <div className='mx-auto pb-6'><img src='/security.png' alt='security' /></div>
+                <div className='text-2xl text-morado-primario pb-2'>Validamos tu identidad</div>
+                <div className='text-gris-80'>Resguardamos la información que compartas con nosotros, haciendo uso de altos estándares de seguridad.</div>
+              </div>
+              <div className='flex flex-col max-w-sm'>
+                <div className='mx-auto pb-6'><img src='/connect.png' alt='connect' /></div>
+                <div className='text-2xl text-morado-primario pb-2'>Validamos tu identidad</div>
+                <div className='text-gris-80'>Tu información será tratada por nosotros y por aquellas empresas con quienes tú decidas compartir tus datos.</div>
               </div>
             </div>
           </div>
