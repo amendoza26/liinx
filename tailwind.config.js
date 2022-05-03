@@ -1,0 +1,31 @@
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+    colors: {
+      'blanco': '#FFFFFF',
+      'gris-10': '#F8F8F8',
+      'gris-20': '#F1F1F1',
+      'gris-30': '#DEDEDE',
+      'gris-40': '#BCBCBC',
+      'gris-60': '#878787',
+      'gris-80': '#505050',
+      'gris-oscuro': '#121212',
+      'verde-claro': '#C1ECE4',
+      'verde-hover': '#29AF97',
+      'verde-secundario': '#1A7060',
+      'naranja-fondo': '#FFF7F3',
+      'naranja-claro': '#FFE7DB',
+      'naranja-hover': '#FF8D58',
+      'naranja-primario': '#F36523',
+      'lila-fondo': '#FCF8FF',
+      'lila-claro': '#F0DCFF',
+      'morado-hover': '#9F55DA',
+      'morado-primario': '#652D92',
+      'rojo': '#FF4D4F',
+    },
+  },
+  plugins: [],
+}
