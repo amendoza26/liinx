@@ -3,8 +3,8 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div>
-      <div className='container m-auto flex py-14 justify-evenly'>
+    <>
+      <section className='container m-auto flex py-14 justify-evenly'>
           <div className='flex flex-col max-w-lg flex-1 justify-center'>
               <div className='text-4xl text-morado-hover font-bold'>Nada más fácil que compartir tus datos por internet de manera segura y gratuita</div>
               <div className='text-lg'>Somos una plataforma peruana, especializada en servicios de identidad digital</div>
@@ -16,12 +16,13 @@ const Home = () => {
           <div className='flex'>
               <img src='/home-banner.png' alt='banner' />
           </div>
-      </div>
+      </section>
       <section className='bg-gris-10 text-verde-secundario'>
         <div className='container m-auto py-12 text-center italic text-2xl'>
           “Liinx cuida tus datos personales, es tu llave para ingresar al mundo digital”
         </div>
       </section>
+
       <section>
         <div className='container m-auto flex flex-row justify-evenly py-20'>
           <div>
@@ -31,11 +32,12 @@ const Home = () => {
             <div className='text-morado-primario text-3xl pb-6'><span className='text-5xl'>Digitaliza </span>tu identidad por internet</div>
             <div className='text-base pb-10'>En nuestro sitio, el más seguro y ágil para facilitar un onboarding digital</div>
             <div className='text-verde-secundario'>
-              <button className='py-2 px-4 border border-verde-secundario'>Te contamos más</button>
+              <button className='py-2 px-4 border rounded border-verde-secundario'>Te contamos más</button>
             </div>
           </div>
         </div>
       </section>
+
       <section className='bg-lila-fondo'>
         <div className='container m-auto py-24'>
           <div className='text-morado-primario font-bold text-center'>
@@ -61,6 +63,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+
       <section>
         <div className='container m-auto py-20 flex justify-evenly'>
           <div className='flex flex-col'>
@@ -102,6 +105,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+
       <section className='bg-lila-fondo'>
         <div className='container mx-auto py-16 text-center'>
           <div className='text-3xl font-bold text-morado-primario pb-2' >Un servicio innovador y parte del mundo digital</div>
@@ -144,7 +148,18 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </div>
+
+      <section>
+        <div className='container mx-auto py-10 flex flex-col'>
+          <div className='text-2xl italic text-verde-secundario text-center mb-8'>“Regístrate y comienza a gestionar tus datos personales  de manera segura”</div>
+          <div className='flex flex-row justify-center'>
+            <button className='text-verde-secundario border rounded border-verde-secundario py-2 px-8 mr-16'>Contáctanos</button>
+            <button className='text-blanco rounded border border-morado-primario bg-morado-primario py-2 px-8'>Comenzar</button>
+          </div>
+        </div>
+      </section>
+      
+    </>
   )
 }
 
