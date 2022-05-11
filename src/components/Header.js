@@ -8,7 +8,7 @@ const Header = () => {
             <div className='bg-gris-10'>
                 <div className='flex justify-between container m-auto py-3' >
                     <div>
-                        <img src='/small.png' alt='Logo' />
+                        <Link to='/'><img src='/small.png' alt='Logo' /></Link>
                     </div>
                     <div className='flex items-center'>
                         <ul className='flex flex-row'>
@@ -24,10 +24,10 @@ const Header = () => {
                 <div className='flex justify-between container m-auto py-3'>
                     <div>
                         <ul className='flex flex-row'>
-                            <li className='pr-14 text-morado-primario'><button>Nosotros</button></li>
-                            <li className='pr-14 text-morado-primario'><button>Beneficios</button></li>
-                            <li className='pr-14 text-morado-primario'><button>Identidad digital</button></li>
-                            <li className='pr-14 text-morado-primario'><button>Seguridad</button></li>
+                            <li className='pr-14 text-morado-primario'><button><Link to='/nosotros'>Nosotros</Link></button></li>
+                            <li className='pr-14 text-morado-primario'><button><Link to='/beneficios'>Beneficios</Link></button></li>
+                            <li className='pr-14 text-morado-primario'><button><Link to='/identidad-digital'>Identidad digital</Link></button></li>
+                            <li className='pr-14 text-morado-primario'><button><Link to='/preguntas-frecuentes'>Seguridad</Link></button></li>
                         </ul>
                     </div>
                     <div>
