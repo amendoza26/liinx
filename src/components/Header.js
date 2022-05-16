@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Header = () => {
   return (
     <>
-        <div className='flex flex-col'>
+        <section className='flex flex-col'>
             <div className='bg-gris-10'>
                 <div className='flex justify-between container m-auto py-3' >
                     <div>
@@ -39,7 +39,10 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-        </div>
+            <div className='relative'>
+                <img className='fixed bottom-0 right-4' src='/nosotrosFlotante.png' alt='banner1' />
+            </div>
+        </section>
     </>
   )
 }

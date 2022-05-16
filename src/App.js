@@ -7,6 +7,9 @@ import Footer from './components/Footer';
 import Nosotros from './pages/Nosotros';
 import PreguntasFrecuentes from './pages/PreguntasFrecuentes';
 import LibroReclamaciones from './pages/LibroReclamaciones';
+import Terminos from './pages/Terminos';
+import PoliticaPrivacidad from './pages/PoliticaPrivacidad';
+import TerminosPDF from './pages/TerminosPDF';
 
 function App() {
   return (
@@ -17,6 +20,9 @@ function App() {
         <Route path='/nosotros' element={<Nosotros />} />
         <Route path='/preguntas-frecuentes' element={<PreguntasFrecuentes />} />
         <Route path='/libro-de-reclamaciones' element={<LibroReclamaciones />} />
+        <Route path='/terminos-y-condiciones' element={<Terminos />} />
+        <Route path='/politica-privacidad' element={<PoliticaPrivacidad />} />
+        <Route path='/terminos-y-condiciones-doc' element={<TerminosPDF />} />
       </Routes>
       <Footer />
     </BrowserRouter>

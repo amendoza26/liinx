@@ -21,9 +21,6 @@ const Nosotros = () => {
                     <img src='/nosotros1.png' alt='nosotros' />
                 </div>
             </div>
-            <div className='relative'>
-                <img className='absolute bottom-0 right-4' src='/nosotrosFlotante.png' alt='banner1' />
-            </div>
         </section>
         <section>
             <div className='container mx-auto py-24'>
