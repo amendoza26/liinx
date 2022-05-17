@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 
 const Header = () => {
   return (
@@ -24,9 +25,9 @@ const Header = () => {
                 <div className='flex justify-between container m-auto py-3'>
                     <div>
                         <ul className='flex flex-row'>
-                            <li className='pr-14 text-morado-primario'><button><Link to='/nosotros'>Nosotros</Link></button></li>
-                            <li className='pr-14 text-morado-primario'><button><Link to='/beneficios'>Beneficios</Link></button></li>
-                            <li className='pr-14 text-morado-primario'><button><Link to='/identidad-digital'>Identidad digital</Link></button></li>
+                            <li className='pr-14 text-morado-primario'><button><HashLink to='/'>Nosotros</HashLink></button></li>
+                            <li className='pr-14 text-morado-primario'><button><HashLink smooth to='/#beneficios'>Beneficios</HashLink></button></li>
+                            <li className='pr-14 text-morado-primario'><button><HashLink smooth to='/#identidad-digital'>Identidad digital</HashLink></button></li>
                             <li className='pr-14 text-morado-primario'><button><Link to='/preguntas-frecuentes'>Seguridad</Link></button></li>
                         </ul>
                     </div>

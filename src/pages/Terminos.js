@@ -83,7 +83,7 @@ const Terminos = () => {
               </div>
             </div>
           </div>
-          <div className='py-4 text-blanco font-bold bg-morado-primario text-center text-xl'>Para conocer nuestros términos y condiciones completos ingresa <Link to='/terminos-y-condiciones-doc'><span className='font-bold text-2xl'>aquí</span></Link></div>
+          <div className='py-4 text-blanco bg-morado-primario text-center text-xl'>Para conocer nuestros términos y condiciones completos ingresa <Link to='/terminos-y-condiciones-doc'><span className='font-bold text-2xl'>aquí</span></Link></div>
         </div>
       </section>
     </>

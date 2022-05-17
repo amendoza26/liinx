@@ -6,11 +6,11 @@ const Home = () => {
     <>
       <section className='container m-auto flex py-14 justify-evenly'>
           <div className='flex flex-col max-w-lg flex-1 justify-center'>
-              <div className='text-4xl text-morado-hover font-bold'>Nada más fácil que compartir tus datos por internet de manera segura y gratuita</div>
-              <div className='text-lg'>Somos una plataforma peruana, especializada en servicios de identidad digital</div>
-              <div>
-                <input className='border' placeholder='Ingresa tu correo'></input>
-                <button>Registrate</button>
+              <div className='text-4xl text-morado-hover font-bold mb-6'>Nada más fácil <span className='text-morado-primario'>que compartir tus datos por internet de manera</span> segura y gratuita</div>
+              <div className='text-lg mb-10'>Somos una plataforma peruana, especializada en servicios de identidad digital</div>
+              <div className='flex space-x-6'>
+                <input className='border border-gris-40 rounded pl-3 w-full' placeholder='Ingresa tu correo'></input>
+                <button className='space-x-2.5 items-center flex justify-center py-2 px-9 text-blanco bg-morado-primario rounded'><img src='/create.png' alt='create' /><span>Registrate</span></button>
               </div>
           </div>
           <div className='flex'>
@@ -38,7 +38,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className='bg-lila-fondo'>
+      <section id='beneficios' className='bg-lila-fondo'>
         <div className='container m-auto py-24'>
           <div className='text-morado-primario font-bold text-center'>
             <Typography variant='h4' className='text-'>Beneficios de utilizar Liinx</Typography>
@@ -64,7 +64,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section>
+      <section id='identidad-digital'>
         <div className='container m-auto py-20 flex justify-evenly'>
           <div className='flex flex-col'>
             <div className='pb-2 text-3xl font-bold text-morado-primario'>¿Quieres crear tu identidad digital? </div>
