@@ -21,7 +21,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <div>
+            <div className='shadow shadow-gris-40'>
                 <div className='flex justify-between container m-auto py-3'>
                     <div>
                         <ul className='flex flex-row'>

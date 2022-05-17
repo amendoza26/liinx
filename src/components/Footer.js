@@ -31,7 +31,7 @@ const Footer = () => {
                 </ul>
                 <ul>
                     <li className='text-xl font-bold mb-6'>Alguna duda?</li>
-                    <li><button className='mb-6'><Link to='contactanos'>Contáctanos</Link></button></li>
+                    <li><button className='mb-6'><Link to='contacto'>Contáctanos</Link></button></li>
                     <li><img src='/libroReclamaciones.png' alt='libro de reclamaciones' /></li>
                 </ul>
             </div>

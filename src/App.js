@@ -10,6 +10,7 @@ import LibroReclamaciones from './pages/LibroReclamaciones';
 import Terminos from './pages/Terminos';
 import PoliticaPrivacidad from './pages/PoliticaPrivacidad';
 import TerminosPDF from './pages/TerminosPDF';
+import Contacto from './pages/Contacto';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/terminos-y-condiciones' element={<Terminos />} />
         <Route path='/politica-privacidad' element={<PoliticaPrivacidad />} />
         <Route path='/terminos-y-condiciones-doc' element={<TerminosPDF />} />
+        <Route path='/contacto' element={<Contacto />} />
       </Routes>
       <Footer />
     </BrowserRouter>
