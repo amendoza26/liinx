@@ -1,5 +1,6 @@
 import { Typography } from '@mui/material'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
   return (
@@ -153,12 +154,11 @@ const Home = () => {
         <div className='container mx-auto py-10 flex flex-col'>
           <div className='text-2xl italic text-verde-secundario text-center mb-8'>“Regístrate y comienza a gestionar tus datos personales  de manera segura”</div>
           <div className='flex flex-row justify-center'>
-            <button className='text-verde-secundario border rounded border-verde-secundario py-2 px-8 mr-16'>Contáctanos</button>
+            <Link to='/contacto'><button className='text-verde-secundario border rounded border-verde-secundario py-2 px-8 mr-16'>Contáctanos</button></Link>
             <button className='text-blanco rounded border border-morado-primario bg-morado-primario py-2 px-8'>Comenzar</button>
           </div>
         </div>
       </section>
-      
     </>
   )
 }
