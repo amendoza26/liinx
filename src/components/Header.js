@@ -12,11 +12,11 @@ const Header = () => {
                         <Link to='/'><img src='/small.png' alt='Logo' /></Link>
                     </div>
                     <div className='flex items-center'>
-                        <ul className='flex flex-row'>
-                            <li className='pl-14 text-morado-hover'><button><Link to='/usuario'>Usuario</Link></button></li>
-                            <li className='pl-14 text-morado-primario'><button><Link to='/empresa'>Empresa</Link></button></li>
-                            <li className='pl-14 text-morado-hover'><button><Link to='/cuenta'>Mi cuenta</Link></button></li>
-                            <li className='pl-14 text-morado-hover'><button><Link to='/registro'>Registrate</Link></button></li>
+                        <ul className='flex flex-row space-x-14 items-center'>
+                            <li className='text-morado-hover'><button><Link to='/usuario'>Usuario</Link></button></li>
+                            <li className='text-morado-primario'><button><Link to='/empresa'>Empresa</Link></button></li>
+                            <li className='text-verde-secundario'><button className='px-4 py-2 rounded border border-verde-secundario'><Link to='/cuenta'>Mi cuenta</Link></button></li>
+                            <li className='text-blanco'><button className='px-4 py-2 rounded border border-morado-primario bg-morado-primario'><Link to='/registro'>Registrate</Link></button></li>
                         </ul>
                     </div>
                 </div>

@@ -25,8 +25,8 @@ const Accordion = ({ title, children, index, activeIndex, setActiveIndex }) => {
             <div className="flex items-center justify-center">
               {
                 (activeIndex === index)
-                ? <div className='flex flex-row text-morado-primario'>Ver menos <img src='/remove.png' alt='remove' /> </div>
-                : <div className='flex flex-row text-morado-primario'>Ver más <img src='/add.png' alt='add' /> </div>
+                ? <button className='flex flex-row text-morado-primario'>Ver menos <img src='/remove.png' alt='remove' /> </button>
+                : <button className='flex flex-row text-morado-primario'>Ver más <img src='/add.png' alt='add' /> </button>
               }
             </div>
                 

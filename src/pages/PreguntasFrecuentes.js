@@ -53,7 +53,7 @@ const PreguntasFrecuentes = () => {
       </section>
       <section>
         <div className='flex flex-col mb-24 my-20'>
-          <div className='text-naranja-primario text-2xl font-bold container mx-auto'>
+          <div className='text-naranja-primario text-2xl font-bold container mx-auto mb-8'>
             ¿Quiénes somos?
           </div>
           <div className='flex flex-col'>
@@ -74,7 +74,102 @@ const PreguntasFrecuentes = () => {
             >
                 Para comprar bienes o servicios digitales, tienes que entregar tus datos personales. Toda esta información, forma tu identidad digital. Liinx facilita este proceso y lo hace de manera segura.    
             </Accordion>
+
+            <Accordion 
+                title="¿Quiénes conforman el equipo de Liinx?"
+                index={3}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+            >
+                Jóvenes profesionales, con distintas especialidades y experiencias. Somos un equipo multidisciplinario en la búsqueda de la mejora continua, ofreciendo una solución óptima en la gestión de información.    
+            </Accordion>
           </div>
+
+          <div className='text-naranja-primario text-2xl font-bold container mx-auto mt-12 mb-8'>
+            ¿Cómo protegemos tus datos?
+          </div>
+
+          <div className='flex flex-col'>
+            <Accordion 
+                title="¿Cómo funciona nuestra plataforma?"
+                index={4}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+            >
+                Liinx solicita tus datos personales según las necesidades del usuario, para luego almacenar y gestionar tu información de manera segura.  
+            </Accordion>
+
+            <Accordion 
+                title="¿Dónde almacenan mis datos personales?"
+                index={5}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+            >
+                Debe ser respondida por Gino. El espacio queda aquí para cuando tengamos una respuesta a esta pregunta   
+            </Accordion>
+
+            <Accordion 
+                title="¿Mis datos están seguros?"
+                index={6}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+            >
+                Compartir tus datos en internet tiene diversos riesgos relacionados a filtraciones y/o adulteraciones. Liinx se encarga de la gestión de tu información y la traslada bajo tu consentimiento a sitios que cumplan con nuestras medidas de privacidad.   
+            </Accordion>
+
+            <Accordion 
+                title="¿Qué pasa con mis datos si decido eliminar mi cuenta?"
+                index={7}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+            >
+                Se almacenará una copia temporal por 30 días en caso cambies de opinión. Luego de este plazo, se te enviará una copia de los mismos y serán removidos de nuestras bases de datos.    
+            </Accordion>
+
+            <Accordion 
+                title="¿Con quiénes comparten mis datos personales?"
+                index={8}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+            >
+                Tu información será compartida exclusivamente con las organizaciones que tu elijas, las cuales han sido previamente evaluadas por el equipo de Liinx.    
+            </Accordion>
+          </div>
+
+          <div className='text-naranja-primario text-2xl font-bold container mx-auto mt-12 mb-8'>
+            ¿Qué hacen con mis datos personales?
+          </div>
+
+          <div className='flex flex-col'>
+            <Accordion 
+                title="¿Liinx usa mis datos con fines publicitarios?"
+                index={9}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+            >
+                Sólo con tu autorización podremos enviarte comunicaciones comerciales respecto a productos y servicios que podrían ser de tu interés. Tu información únicamente podrá ser compartida para este fin con aquellas empresas que tú decidas. 
+            </Accordion>
+
+            <Accordion 
+                title="¿Qué niveles de verificación tiene Liinx?"
+                index={10}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+            >
+                Liinx cuenta con tres niveles de verificación gradual (básico - intermedio - avanzado). Mientras más alto tu nivel de verificación, mayor cantidad de bienes y servicios digitales tendrás a tu disposición.
+            </Accordion>
+
+            <Accordion 
+                title="¿Cómo validan mi identidad?"
+                index={11}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+            >
+                Una vez que entregues tu información, corroboramos que la misma sea legítima con bases de datos internas y externas. Asimismo, recopilamos distintos elementos para la creación de tu identidad digital.   
+            </Accordion>
+          </div>
+            
+          
         </div>
       </section>
     </>
