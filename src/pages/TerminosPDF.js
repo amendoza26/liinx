@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const TerminosPDF = () => {
 
@@ -40,20 +41,20 @@ const TerminosPDF = () => {
   return (
     <>
         <section>
-            <div className='container mx-auto'>
+            <div className='container mx-auto mt-24 mb-20'>
                 <div className='text-naranja-primario text-4xl font-bold text-center'>Términos y condiciones</div>
                 <div className='mt-8 mb-2'>
                     {condiciones.map((condiciones,index) =>     
                         <div className='mb-10' key={`${condiciones.index}`}>
                             <div className='text-lg font-bold mb-4'>{condiciones.title}</div>
-                            <div >{condiciones.text}</div>
+                            <div>{condiciones.text}</div>
                         </div>
                     )}
                 </div>
-                <div className=''>
-                    <button className='px-4 py-2 border border-verde-secundario'>Regresar</button>
-                    <button className='flex flex-col space-y-4 py-9 px-9 border-gris-80 border'>
-                        <span>Descargar documento en formato PDF</span>
+                <div className='flex justify-between items-end'>
+                    <Link to='/terminos-y-condiciones'><button className='px-4 py-2 border border-verde-secundario text-verde-secundario rounded h-min'>Regresar</button></Link>
+                    <button className='flex flex-col space-y-4 py-9 px-10 border-gris-80 border w-44 items-center'>
+                        <span>Descargar documento formato PDF</span>
                         <img src='/save_alt.png' alt='save' />
                     </button>
                 </div>
