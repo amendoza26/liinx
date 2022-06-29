@@ -18,7 +18,7 @@ const Private = () => {
             <div className={` ${open ? "w-80" : "w-20 "} bg-dark-purple h-screen p-5  pt-8 relative duration-300`}>
                 
                 <div className="flex gap-x-4 items-center">
-                    <img src="./small.png" alt='logo' />
+                    <img src="./smalll.png" alt='logo' />
                 </div>
                 <ul className="pt-6">
                 {Menus.map((Menu, index) => (

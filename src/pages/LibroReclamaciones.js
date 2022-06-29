@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 
 const LibroReclamaciones = () => {
 
@@ -91,12 +91,12 @@ const LibroReclamaciones = () => {
             </ul>
           </div>
           <div className='mt-16 space-x-20 flex justify-center'>
-            <Link to='/reclamaciones-form'><button className='text-verde-secundario py-2 px-4 border rounded border-verde-secundario'>Libro de Reclamaciones</button></Link>
+            <Link to='/libro-reclamaciones/form'><button className='text-verde-secundario py-2 px-4 border rounded border-verde-secundario'>Libro de Reclamaciones</button></Link>
             <button className='bg-morado-primario px-14 py-2 rounded text-blanco'>Ir a whatsapp</button>
           </div>
         </div>
       </section>
-
+      <Outlet />
     </>
   )
 }

@@ -1,8 +1,8 @@
 import './App.css';
-import Header from './components/Header';
+import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
 import Home from './pages/Home';
-import Footer from './components/Footer';
 import Nosotros from './pages/Nosotros';
 import PreguntasFrecuentes from './pages/PreguntasFrecuentes';
 import LibroReclamaciones from './pages/LibroReclamaciones';
@@ -15,37 +15,60 @@ import ReclamacionesForm from './pages/ReclamacionesForm';
 import Registro from './pages/Registro';
 import Password from './components/steps/Password';
 import Private from './pages/Private';
+
 import Layout from './components/Layout'
 import PrivateLayout from './components/PrivateLayout'
+import CustomLayout from './components/CustomLayout';
+import { UserContext } from './UserContext';
+import { useMemo } from 'react';
+import Prueba from './pages/Prueba';
+
 
 function App() {
+
+  const [user, setUser] = useState({
+    email: "",
+    password: ""
+  })
+
+  const value = useMemo(() => ({ user, setUser }), [user, setUser])
+
+  
+
   return (
-    <BrowserRouter>
-      
-      <Routes>
-        <Route path='/' element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path='/nosotros' element={<Nosotros />} />
-          <Route path='/preguntas-frecuentes' element={<PreguntasFrecuentes />} />
-          <Route path='/libro-reclamaciones' element={<LibroReclamaciones />} />
-          <Route path='/terminos-y-condiciones' element={<Terminos />} />
-          <Route path='/politica-privacidad' element={<PoliticaPrivacidad />} />
-          <Route path='/terminos-y-condiciones-doc' element={<TerminosPDF />} />
-          <Route path='/politicas-privacidad-doc' element={<PoliticaPDF />} />
-          <Route path='/contacto' element={<Contacto />} />
-          <Route path='/reclamaciones-form' element={<ReclamacionesForm />} />
-          <Route path='/registro' element={<Registro />} />
-          <Route path='/password' element={<Password />} />
-        </Route>
-        <Route path='/private' element={<PrivateLayout />} >
-          <Route path='/zone' element={<Private />} />
-        </Route>
-      </Routes>
-      
-        
-        
-      
-    </BrowserRouter>
+    
+      <BrowserRouter>
+        <UserContext.Provider value={value} >
+          
+          <Routes>
+            <Route path='/' element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path='/nosotros' element={<Nosotros />} />
+              <Route path='preguntas-frecuentes' element={<PreguntasFrecuentes />} />
+
+              <Route path='libro-reclamaciones' element={<CustomLayout />} >
+                <Route index element={<LibroReclamaciones />} />
+                <Route path='form' element={<ReclamacionesForm />} />
+              </Route>
+
+              <Route path='terminos-y-condiciones' element={<Terminos />} />
+              <Route path='/politica-privacidad' element={<PoliticaPrivacidad />} />
+              <Route path='/terminos-y-condiciones-doc' element={<TerminosPDF />} />
+              <Route path='/politicas-privacidad-doc' element={<PoliticaPDF />} />
+              <Route path='/contacto' element={<Contacto />} />
+              
+              <Route path='/registro' element={<Registro />} />
+              <Route path='/registro/:email' element={<Password />} />
+            </Route>
+            
+            <Route path='/private' element={<PrivateLayout />} >
+              <Route path='zone' element={<Private />} />
+            </Route>
+          </Routes>
+  
+        </UserContext.Provider>
+      </BrowserRouter>
+    
   );
 }
 
