@@ -21,7 +21,7 @@ const Password = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const link = 'liinx-test.herokuapp.com'
+      const link = 'http://localhost:4000'
         // liinx-test.herokuapp.com
         // http://localhost:4000
         const { data } = await axios.post(`${link}/api/user/signUp`, {
@@ -33,7 +33,7 @@ const Password = () => {
     } catch (error) {
         console.log(error);
     }
-}
+  }
 
 
   return (

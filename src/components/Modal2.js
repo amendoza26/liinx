@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 
 const Modal2 = ({ setOpenModal }) => {
@@ -9,9 +10,11 @@ const Modal2 = ({ setOpenModal }) => {
             <div className="text-sm mt-4 text-gris-80">
                 ¡Gracias por ser parte de la comunidad Liinx! Te invitamos a navegar por tu zona privada y descubrir todo lo que tenemos para ti.
             </div>
-           <div>
-                <button onClick={() => setOpenModal(false)} className="bg-morado-primario rounded justify-center mx-auto text-blanco text-sm mt-6 py-1 px-2">Acepto</button>
-                <button onClick={() => setOpenModal(false)} className="bg-morado-primario rounded justify-center mx-auto text-blanco text-sm mt-6 py-1 px-2">Acepto</button>
+           <div className="flex justify-center space-x-6">
+                <button onClick={() => setOpenModal(false)} className="border border-verde-secundario rounded  text-verde-secundario text-sm mt-6 py-1 px-2">Salir</button>
+                <Link to="/private">
+                  <button onClick={() => setOpenModal(false)} className="bg-morado-primario rounded  text-blanco text-sm mt-6 py-1 px-2">Ver zona privada</button>
+                </Link>
            </div>
           </div>
         </div>

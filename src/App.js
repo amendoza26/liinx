@@ -16,12 +16,13 @@ import Registro from './pages/Registro';
 import Password from './components/steps/Password';
 import Private from './pages/Private';
 
-import Layout from './components/Layout'
-import PrivateLayout from './components/PrivateLayout'
-import CustomLayout from './components/CustomLayout';
+import Layout from './components/Layout/Layout'
+import PrivateLayout from './components/Layout/PrivateLayout'
+import CustomLayout from './components/Layout/CustomLayout';
 import { UserContext } from './UserContext';
 import { useMemo } from 'react';
-import Prueba from './pages/Prueba';
+import Login from './pages/Login';
+import LoginLayout from './components/Layout/LoginLayout';
 
 
 function App() {
@@ -59,10 +60,15 @@ function App() {
               
               <Route path='/registro' element={<Registro />} />
               <Route path='/registro/:email' element={<Password />} />
+              
+            </Route>
+
+            <Route path='login' element={<LoginLayout />} >
+              <Route index element={<Login />} />
             </Route>
             
             <Route path='/private' element={<PrivateLayout />} >
-              <Route path='zone' element={<Private />} />
+              <Route index element={<Private />} />
             </Route>
           </Routes>
   

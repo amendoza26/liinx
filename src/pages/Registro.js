@@ -55,7 +55,7 @@ const Registro = () => {
 
   return (
     <>
-        <div>Steps</div>
+        
         <section>
             <div className='container mx-auto mt-14 mb-44 max-w-md'>
                 <form onSubmit={handleSubmit}>
@@ -63,7 +63,6 @@ const Registro = () => {
                 </form>
             </div>
         </section>
-        <button type='submit'>Submit</button>
     </>
   )
 }
