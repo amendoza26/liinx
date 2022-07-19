@@ -23,6 +23,7 @@ import { UserContext } from './UserContext';
 import { useMemo } from 'react';
 import Login from './pages/Login';
 import LoginLayout from './components/Layout/LoginLayout';
+import Notificaciones from './pages/Notificaciones';
 
 
 function App() {
@@ -69,6 +70,7 @@ function App() {
             
             <Route path='/private' element={<PrivateLayout />} >
               <Route index element={<Private />} />
+              <Route path='notificaciones' element={<Notificaciones />} />
             </Route>
           </Routes>
   

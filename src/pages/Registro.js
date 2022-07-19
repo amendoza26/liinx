@@ -39,8 +39,8 @@ const Registro = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const link = 'liinx-test.herokuapp.com'
-            // liinx-test.herokuapp.com
+            const link = 'https://liinx-back.herokuapp.com'
+            // https://liinx-back.herokuapp.com
             // http://localhost:4000
             const { data } = await axios.post(`${link}/api/user/email`, {
                 ...user,

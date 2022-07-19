@@ -69,8 +69,8 @@ const Private = () => {
             <div className='my-8 mx-10'>
                 <div className='text-morado-primario text-xl font-bold '>Resumen</div>
                 <div className='mt-8 flex'>
-                    <div className='flex w-3/5 flex-col space-y-10'>
-                        <div className='flex flex=row space-x-10'>
+                    <div className='flex w-2/3 flex-col space-y-10'>
+                        <div className='flex flex=row space-x-10 justify-center'>
                             <div className='flex flex-col items-center text-center w-72 border border-verde-secundario rounded-lg py-6'>
                                 <div>
                                     <img src='./Pesa.png' alt='pesa' />
@@ -92,7 +92,7 @@ const Private = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='flex flex=row space-x-10'>
+                        <div className='flex flex=row space-x-10 justify-center'>
                             <div className='flex flex-col items-center text-center w-72 border border-verde-secundario rounded-lg py-6'>
                                 <div>
                                     <img src='./descubre.png' alt='pesa' />
@@ -113,7 +113,7 @@ const Private = () => {
                             </div>
                         </div>
                     </div>
-                    <div className='flex flex-col border border-gris-30 w-2/5 px-8 pt-6 rounded-lg'>
+                    <div className='flex flex-col border border-gris-30 w-1/3 px-8 pt-6 rounded-lg'>
                         <div className='font-bold text-morado-primario text-center w-full mb-4'>Mis notificaciones</div>
                         {Notificaciones.map((noti, i) => (
                             <div className='px-6 py-4 shadow mb-1 flex'>
@@ -127,7 +127,7 @@ const Private = () => {
                                 </div>
                             </div>
                         ))}
-                        <Link to='notificaciones'><div className='mt-6 flex justify-center'><button><img src='./buttonLink.png' alt='boton' /></button></div></Link>
+                        <Link to='/private/notificaciones'><div className='mt-6 flex justify-center'><button><img src='./buttonLink.png' alt='boton' /></button></div></Link>
                     </div>
                 </div>
             </div>
