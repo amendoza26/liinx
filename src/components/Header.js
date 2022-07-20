@@ -13,7 +13,7 @@ const Header = () => {
                     </div>
                     <div className='flex items-center'>
                         <ul className='flex flex-row space-x-14 items-center'>
-                            <li className='text-morado-hover'><button><Link to='/usuario'>Usuario</Link></button></li>
+                            <li className='text-morado-hover'><button><Link to='/private'>Usuario</Link></button></li>
                             <li className='text-morado-primario'><button><Link to='/empresa'>Empresa</Link></button></li>
                             <li className='text-verde-secundario'><button className='px-4 py-2 rounded border border-verde-secundario'><Link to='/login'>Mi cuenta</Link></button></li>
                             <li className='text-blanco'><button className='px-4 py-2 rounded border border-morado-primario bg-morado-primario'><Link to='/registro'>Registrate</Link></button></li>
