@@ -68,7 +68,7 @@ function App() {
               <Route index element={<Login />} />
             </Route>
             
-            <Route path='/private' element={<PrivateLayout />} >
+            <Route path='private' element={<PrivateLayout />} >
               <Route index element={<Private />} />
               <Route path='notificaciones' element={<Notificaciones />} />
             </Route>
