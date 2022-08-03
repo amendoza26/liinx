@@ -1,6 +1,15 @@
-import React from 'react'
+import { useState } from 'react'
+import ModalContact from '../components/ModalContact'
 
 const ContactForm = () => {
+
+    const [openModal, setOpenModal] = useState(false)
+
+    const modalOpen = (e) => {
+        e.preventDefault()
+        setOpenModal(true)
+    }
+
   return (
     <>
         <div className='px-24 my-8'>
@@ -77,9 +86,10 @@ const ContactForm = () => {
                             </label>
                         </div>
                         <div className='flex justify-end'>
-                            <button className='text-gris-40 py-2 px-14 border rounded border-gris-40'>Enviar</button>
+                            <button onClick={modalOpen} className='text-blanco bg-morado-primario py-2 px-14 border rounded'>Guardar datos</button>
                         </div>
                     </form>
+                    { openModal && <ModalContact setOpenModal={setOpenModal} /> }
                 </div>
             </section>
         </div>
