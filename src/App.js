@@ -24,6 +24,7 @@ import { useMemo } from 'react';
 import Login from './pages/Login';
 import LoginLayout from './components/Layout/LoginLayout';
 import Notificaciones from './pages/Notificaciones';
+import ContactForm from './pages/ContactForm';
 
 
 function App() {
@@ -71,6 +72,7 @@ function App() {
             <Route path='private' element={<PrivateLayout />} >
               <Route index element={<Private />} />
               <Route path='notificaciones' element={<Notificaciones />} />
+              <Route path='contact-form' element={<ContactForm />} />
             </Route>
           </Routes>
   

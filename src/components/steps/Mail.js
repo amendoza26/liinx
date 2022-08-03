@@ -28,16 +28,16 @@ const Mail = ({ user, setUser, page, setPage }) => {
                             <input type='email' name='email' placeholder='ejemplo@email.com' value={user.email} onChange={(e) => setUser({...user, [e.target.name]:e.target.value}) } className='pl-2 appearance-none border-b border-gris-40 rounded w-full mt-8' />
                         </div>
                     </div>
-                    <div class="form-check mb-8 bg-gris-10 py-4 px-4">
-                        <input class=" h-4 w-4 border-4 border-morado-primario rounded-sm bg-white transition duration-200 mt-1 align-top accent-morado-primario float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault" required="required" />
-                        <label class="form-check-label inline-block text-gris-80" for="flexCheckDefault" aria-required="true">
-                            Acepto la política de privacidad
+                    <div className="form-check mb-8 bg-gris-10 py-4 px-4">
+                        <input className=" h-4 w-4 border-4 border-morado-primario rounded-sm bg-white transition duration-200 mt-1 align-top accent-morado-primario float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault" required="required" />
+                        <label className="form-check-label inline-block text-gris-80" for="flexCheckDefault" aria-required="true">
+                            Acepto la <span className='text-morado-primario'>política de privacidad</span>
                         </label>
                     </div>
-                    <div class="form-check mb-8 bg-gris-10 py-4 px-4">
-                        <input class="h-4 w-4 border-4 border-morado-primario rounded-sm bg-white transition duration-200 mt-1 align-top accent-morado-primario float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault" required="required" />
-                        <label class="form-check-label inline-block text-gris-80" for="flexCheckDefault" aria-required="true">
-                            Acepto el envío de comunicaciones comerciales
+                    <div className="form-check mb-8 bg-gris-10 py-4 px-4">
+                        <input className="h-4 w-4 border-4 border-morado-primario rounded-sm bg-white transition duration-200 mt-1 align-top accent-morado-primario float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault" required="required" />
+                        <label className="form-check-label inline-block text-gris-80" for="flexCheckDefault" aria-required="true">
+                            Acepto el envío de <span className='text-morado-primario'>comunicaciones comerciales</span>
                         </label>
                     </div>
                     <div className='flex justify-center border rounded border-gris-40 w-60 mx-auto'>
