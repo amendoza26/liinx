@@ -25,6 +25,7 @@ import Login from './pages/Login';
 import LoginLayout from './components/Layout/LoginLayout';
 import Notificaciones from './pages/Notificaciones';
 import ContactForm from './pages/ContactForm';
+import ValidacionAvanzada from './pages/ValidacionAvanzada';
 
 
 function App() {
@@ -73,6 +74,7 @@ function App() {
               <Route index element={<Private />} />
               <Route path='notificaciones' element={<Notificaciones />} />
               <Route path='contact-form' element={<ContactForm />} />
+              <Route path='validacion-avanzada' element={<ValidacionAvanzada />} />
             </Route>
           </Routes>
   

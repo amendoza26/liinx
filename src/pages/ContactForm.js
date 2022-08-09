@@ -1,18 +1,35 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { Link } from 'react-router-dom'
 import ModalContact from '../components/ModalContact'
+import { PeruData } from '../components/PeruData'
+import { UserContext } from '../UserContext'
 
 const ContactForm = () => {
 
+    const [confirm, setconfirm] = useState(true)
+    const { user, setUser } = useContext(UserContext)
     const [openModal, setOpenModal] = useState(false)
+
+    const [countryId, setcountryId] = useState('')
+    const [state, setState] = useState([])
 
     const modalOpen = (e) => {
         e.preventDefault()
         setOpenModal(true)
     }
 
+    const handleCountry = (e) => {
+        const getCountryId = e.target.value;
+        console.log(getCountryId)
+        const getStateData = PeruData.find(country => country.nombre === getCountryId).departamentos;
+        setState(getStateData)
+        setUser({...user, [e.target.name]:e.target.value})
+    }
+
   return (
-    <>
-        <div className='px-24 my-8'>
+        <>
+        {confirm 
+        ? <div className='px-24 my-8'>
             <section className='py-6 px-10 border border-gris-30 rounded-lg'>
                 <div className='text-4xl font-bold text-morado-hover mb-12'>Validación básica</div>
                 <div>
@@ -20,56 +37,59 @@ const ContactForm = () => {
                         <div className='flex space-x-12 mb-16'>
                             <div className='flex flex-1 flex-col'>
                                 <label className='mb-2'>Nombres</label>
-                                <input className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2' type='text'></input>
+                                <input name='name' value={user.name} onChange={(e) => setUser({...user, [e.target.name]:e.target.value}) } className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2' type='text'></input>
                             </div>
                             <div className='flex flex-1 flex-col'>
                                 <label className='mb-2'>Apellido Paterno</label>
-                                <input className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2' type='text'></input>
+                                <input name='apPat' placeholder='Apellido Materno' value={user.apPat} onChange={(e) => setUser({...user, [e.target.name]:e.target.value}) } className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2' type='text'></input>
                             </div>
                         </div>
                         <div className='flex space-x-12 mb-16'>
                             <div className='flex flex-1 flex-col'>
                                 <label className='mb-2'>Apellido Materno</label>
-                                <input className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2' type='text'></input>
+                                <input name='apMat' placeholder='Apellido Materno' value={user.apMat} onChange={(e) => setUser({...user, [e.target.name]:e.target.value}) } className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2' type='text'></input>
                             </div>
                             <div className='flex flex-1 flex-col'>
                                 <label className='mb-2'>Correo elctrónico</label>
-                                <input className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2' type='text'></input>
+                                <input type='email' name='email' placeholder='ejemplo@email.com' value={user.email} onChange={(e) => setUser({...user, [e.target.name]:e.target.value}) } className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2'></input>
                             </div>
                         </div>
                         <div className='flex space-x-12 mb-16'>
                             <div className='flex flex-1 flex-col'>
                                 <label className='mb-2'>Celular</label>
-                                <input className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2' type='text'></input>
+                                <input name='phone' placeholder='ejemplo@email.com' value={user.phone} onChange={(e) => setUser({...user, [e.target.name]:e.target.value}) } className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2' type='text'></input>
                             </div>
                             <div className='flex flex-1 flex-col'>
                                 <label className='mb-2'>País</label>
-                                <select className='shadow border border-gris-40 rounded w-full px-3 py-2' type='text'>
-                                    <option>Perú</option>
-                                    <option>Argentina</option>
-                                    <option>Colombia</option>
-                                    <option>Chile</option>
+                                <select className='shadow border border-gris-40 rounded w-full px-3 py-2' name='pais' value={user.pais} onChange={(e) => handleCountry(e) }>
+                                    <option>Elegir pais</option>
+                                    {PeruData.map(( getCountry, index ) => (
+                                        <option value={getCountry.nombre} key={index}>{getCountry.nombre}</option>
+                                    ))}
                                 </select>
                             </div>                            
                         </div>
                         <div className='flex space-x-12 mb-16'>
                             <div className='flex flex-1 flex-col'>
                                 <label className='mb-2'>Ciudad</label>
-                                <select className='shadow border border-gris-40 rounded w-full px-3 py-2' type='text'>
-                                    <option>Lima</option>
-                                    <option>Arequipa</option>
+                                <select  className='shadow border border-gris-40 rounded w-full px-3 py-2' name='ciudad' value={user.ciudad} onChange={(e) => setUser({...user, [e.target.name]:e.target.value}) }>
+                                    <option>Elegir Ciudad</option>
+                                    {state.map((getstate, index) => (
+                                        <option value={getstate.name} key={index}>{getstate.name}</option>
+                                    ))}
                                 </select>
                             </div>
                             <div className='flex flex-1 flex-col'>
                                 <label className='mb-2'>Distrito</label>
-                                <select className='shadow border border-gris-40 rounded w-full px-3 py-2' type='text'>
-                                    <option>Ate</option>
-                                    <option>Barranco</option>
-                                    <option>Miraflores</option>
-                                    <option>Surquillo</option>
-                                    <option>San Borja</option>
-                                    <option>Santiago de Surco</option>
-                                    <option>Surquillo</option>
+                                <select className='shadow border border-gris-40 rounded w-full px-3 py-2' name='distrito' value={user.distrito} onChange={(e) => setUser({...user, [e.target.name]:e.target.value}) }>
+                                    <option>Elegir Distrito</option>
+                                    <option value="Ate">Ate</option>
+                                    <option value="Barranco">Barranco</option>
+                                    <option value="Miraflores">Miraflores</option>
+                                    <option value="Surquillo">Surquillo</option>
+                                    <option value="San Borja">San Borja</option>
+                                    <option value="Santiago de Surco">Santiago de Surco</option>
+                                    <option value="Surquillo">Surquillo</option>
                                 </select>
                             </div>
                         </div>
@@ -89,12 +109,76 @@ const ContactForm = () => {
                             <button onClick={modalOpen} className='text-blanco bg-morado-primario py-2 px-14 border rounded'>Guardar datos</button>
                         </div>
                     </form>
-                    { openModal && <ModalContact setOpenModal={setOpenModal} /> }
+                    { openModal && <ModalContact setOpenModal={setOpenModal} setconfirm={setconfirm} /> }
                 </div>
             </section>
         </div>
+        
+        :   <div className='px-24 my-8'>
+            <section className='py-6 px-10 border border-gris-30 rounded-lg'>
+                <div className='text-4xl font-bold text-morado-hover mb-12'>Validación básica</div>
+                <div>
+                    <form>
+                        <div className='flex space-x-12 mb-16'>
+                            <div className='flex flex-1 flex-col'>
+                                <label className='mb-2'>Nombres</label>
+                                <input className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2' type='text' value={user.name}></input>
+                            </div>
+                            <div className='flex flex-1 flex-col'>
+                                <label className='mb-2'>Apellidos</label>
+                                <input value={user.apPat + ' ' + user.apMat} className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2' type='text'></input>
+                            </div>
+                        </div>
+                        <div className='flex space-x-12 mb-16'>
+                            <div className='flex flex-1 flex-col'>
+                                <label className='mb-2'>Correo elctrónico</label>
+                                <input value={user.email} className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2'></input>
+                            </div>
+                            <div className='flex flex-1 flex-col'>
+                                <label className='mb-2'>Celular</label>
+                                <input value={user.phone} className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2' type='text'></input>
+                            </div>
+                        </div>
+                        <div className='flex space-x-12 mb-16'>
+                            
+                            <div className='flex flex-1 flex-col'>
+                                <label className='mb-2'>País</label>
+                                <input value={user.pais} className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2' type='text'></input>
+                            </div>   
+                            <div className='flex flex-1 flex-col'>
+                                <label className='mb-2'>Ciudad</label>
+                                <input value={user.ciudad} className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2' type='text'></input>
+                            </div>                         
+                        </div>
+                        <div className='flex space-x-12 mb-16'>
+                            
+                            <div className='flex w-1/2 flex-col'>
+                                <label className='mb-2'>Distrito</label>
+                                <select className='shadow border border-gris-40 rounded w-full px-3 py-2' type='text'>
+                                    <option>Ate</option>
+                                    <option>Barranco</option>
+                                    <option>Miraflores</option>
+                                    <option>Surquillo</option>
+                                    <option>San Borja</option>
+                                    <option>Santiago de Surco</option>
+                                    <option>Surquillo</option>
+                                </select>
+                            </div>
+                            <div className='w-1/2'></div>
+                            
+                        </div>
+                        
+                        <div className='flex justify-end'>
+                            <Link to='/private/validacion-avanzada'><button className='text-blanco bg-morado-primario py-2 px-14 border rounded'>Validación avanzada</button></Link>
+                        </div>
+                    </form>
+                    
+                </div>
+            </section>
+        </div>
+        }
     </>
-  )
+    )
 }
 
 export default ContactForm
