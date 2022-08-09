@@ -7,51 +7,6 @@ const PrivateLayout = () => {
 
   const [open, setOpen] = useState(true);
   const [show, setShow] = useState(true)
-
-//   const Menus = [
-//     {
-//         title: "Mis datos2", 
-//         src: "fact_check", 
-//         submenu: true, 
-//         submenuItems: [
-//             {
-//                 title: "Datos Personales",
-//                 path: "contact-form"
-//             },
-//             {
-//                 title: "Validación avanzada",
-//                 path: "validacion-avanzada"
-//             },
-//             {
-//                 title: "Configuración",
-//                 path: "configuracion"
-//             }
-//         ] 
-//     },
-//     { 
-//         title: "Mi actividad", 
-//         src: "launch",
-//         submenu: true, 
-//         submenuItems: [
-//             {
-//                 title: "Mis consentimientos",
-//                 path: "consentimiento"
-//             },
-//             {
-//                 title: "Mi actividad reciente",
-//                 path: "actividad-reciente"
-//             },
-//             {
-//                 title: "Mis afiliaciones",
-//                 path: "afiliaciones"
-//             }
-//         ] 
-//     },
-//       { title: "Información", src: "content_paste" },
-//       { title: "Beneficios ", src: "focus" },
-//       { title: "Empresas", src: "store" },
-//       { title: "Contáctanos", src: "contact_support" },
-//   ];
   
   const [submenuOpen, setSubmenuOpen] = useState(false)
 
@@ -70,19 +25,22 @@ const PrivateLayout = () => {
                     <>
                         <li
                             key={index}
-                            className={`flex px-5 rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
+                            className={`flex justify-between px-5 rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center
                             ${menu.gap ? "mt-9" : "mt-2"} ${
                                 index === 0 && "bg-light-white"
                             } `}
-                            >
-                            <img src={`./${menu.src}.png`} />
-                            <span className={`${!open && "hidden"} origin-left duration-200 `}>
-                                {menu.title}
-                            </span>
+                        >
+                            <div className='flex'>
+                                <img src={`./${menu.src}.png`} />
+                                <span className={`${!open && "hidden"} origin-left duration-200 pl-3 `}>
+                                    {menu.title}
+                                </span>
+                            </div>
                             {menu.submenuItems 
-                                ? <img onClick={menu.submenuItems && showSubMenu} src='' alt='imagen'></img>
+                                ? <img className='flex justify-end' onClick={menu.submenuItems && showSubMenu} src='/expand.png' alt='imagen'></img>
                                 : ""
                             }
+                            
                         </li>
                         {menu.submenuItems && submenuOpen && (
                             <ul className='bg-gris-10 transition-all duration-300'>
