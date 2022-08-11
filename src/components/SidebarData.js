@@ -1,6 +1,6 @@
 export const SidebarData = [
     {
-        title: "Mis datos2", 
+        title: "Mis datos", 
         src: "fact_check", 
         submenu: true, 
         submenuItems: [

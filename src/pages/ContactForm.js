@@ -57,7 +57,7 @@ const ContactForm = () => {
                         <div className='flex space-x-12 mb-16'>
                             <div className='flex flex-1 flex-col'>
                                 <label className='mb-2'>Celular</label>
-                                <input name='phone' placeholder='ejemplo@email.com' value={user.phone} onChange={(e) => setUser({...user, [e.target.name]:e.target.value}) } className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2' type='text'></input>
+                                <input name='phone' placeholder='ejemplo@email.com' pattern="[0-9]*" value={user.phone} onChange={(e) => setUser({...user, [e.target.name]:e.target.value}) } className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2' type='text'></input>
                             </div>
                             <div className='flex flex-1 flex-col'>
                                 <label className='mb-2'>País</label>

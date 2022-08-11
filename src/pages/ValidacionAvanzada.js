@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { UserContext } from '../UserContext'
 
 const ValidacionAvanzada = () => {
@@ -121,7 +122,7 @@ const ValidacionAvanzada = () => {
                 </label>
             </div>
             <div className='flex justify-end'>
-                <button className='text-blanco bg-morado-primario py-2 px-14 border rounded'>Siguiente</button>
+                <Link to='/private/validacion-step2'><button className='text-blanco bg-morado-primario py-2 px-14 border rounded'>Siguiente</button></Link>
             </div>
         </div>
     </>

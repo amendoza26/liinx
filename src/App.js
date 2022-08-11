@@ -26,6 +26,9 @@ import LoginLayout from './components/Layout/LoginLayout';
 import Notificaciones from './pages/Notificaciones';
 import ContactForm from './pages/ContactForm';
 import ValidacionAvanzada from './pages/ValidacionAvanzada';
+import ValidacionStep2 from './components/ValidacionStep2';
+import ValidacionStep3 from './components/ValidacionStep3';
+import Config from './pages/Config';
 
 
 function App() {
@@ -75,6 +78,9 @@ function App() {
               <Route path='notificaciones' element={<Notificaciones />} />
               <Route path='contact-form' element={<ContactForm />} />
               <Route path='validacion-avanzada' element={<ValidacionAvanzada />} />
+              <Route path='validacion-step2' element={<ValidacionStep2 />} />
+              <Route path='validacion-step3' element={<ValidacionStep3 />} />
+              <Route path='configuracion' element={<Config /> } />
             </Route>
           </Routes>
   
