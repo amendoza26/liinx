@@ -5,12 +5,14 @@ import { UserContext } from '../UserContext'
 
 const ValidacionStep2 = () => {
 
-    const { user, setUser } = useContext(UserContext)
-    const [img, setImg] = useState();
+    const [img, setImg] = useState({});
 
     const onImageChange = (e) => {
         const [file] = e.target.files;
+        // setImg({...img, [e.target.name]:e.target.value})
         setImg(URL.createObjectURL(file));
+        console.log(img)
+        console.log(file)
       };
 
   return (
@@ -58,19 +60,19 @@ const ValidacionStep2 = () => {
                 <div className='flex justify-between space-x-8'>
                     <div className='flex flex-col items-center'>
                         <div className='border p-2 border-gris-40 rounded mb-2 '>
-                            <input type='file' name='myImage' onChange={onImageChange} />
+                            <input type='file' name='reciboLuz'  onChange={onImageChange} />
                             <img src={img} alt='img' className='max-h-40' />
                         </div>
                     </div>
                     <div className='flex flex-col items-center'>
                         <div className='border p-2 border-gris-40 rounded mb-2'>
-                            <input type='file' name='myImage' onChange={onImageChange} />
+                            <input type='file' name='permisoConducir'  onChange={onImageChange} />
                             <img src={img} alt='img'  className='max-h-40' />
                         </div>
                     </div>
                     <div className='flex flex-col items-center'>
                         <div className='border p-2 border-gris-40 rounded mb-2'>
-                            <input type='file' name='myImage' onChange={onImageChange} />
+                            <input type='file' name='permisoConducir2' onChange={onImageChange} />
                             <img src={img} alt='img'  className='max-h-40' />
                         </div>
                     </div>
@@ -78,19 +80,19 @@ const ValidacionStep2 = () => {
                 <div className='flex justify-between space-x-8'>
                     <div className='flex flex-col items-center'>
                         <div className='border p-2 border-gris-40 rounded mb-2 '>
-                            <input type='file' name='myImage' onChange={onImageChange} />
+                            <input type='file' name='boletaTelefono' onChange={onImageChange} />
                             <img src={img} alt='img' className='max-h-40' />
                         </div>
                     </div>
                     <div className='flex flex-col items-center'>
                         <div className='border p-2 border-gris-40 rounded mb-2'>
-                            <input type='file' name='myImage' onChange={onImageChange} />
+                            <input type='file' name='tarjetaDebito' onChange={onImageChange} />
                             <img src={img} alt='img'  className='max-h-40' />
                         </div>
                     </div>
                     <div className='flex flex-col items-center'>
                         <div className='border p-2 border-gris-40 rounded mb-2'>
-                            <input type='file' name='myImage' onChange={onImageChange} />
+                            <input type='file' name='tarjetaCredito' onChange={onImageChange} />
                             <img src={img} alt='img'  className='max-h-40' />
                         </div>
                     </div>
@@ -98,19 +100,19 @@ const ValidacionStep2 = () => {
                 <div className='flex justify-between space-x-8'>
                     <div className='flex flex-col items-center'>
                         <div className='border p-2 border-gris-40 rounded mb-2 '>
-                            <input type='file' name='myImage' onChange={onImageChange} />
+                            <input type='file' name='boletaHonorarios' onChange={onImageChange} />
                             <img src={img} alt='img' className='max-h-40' />
                         </div>
                     </div>
                     <div className='flex flex-col items-center'>
                         <div className='border p-2 border-gris-40 rounded mb-2'>
-                            <input type='file' name='myImage' onChange={onImageChange} />
+                            <input type='file' name='declaracionJurada' onChange={onImageChange} />
                             <img src={img} alt='img'  className='max-h-40' />
                         </div>
                     </div>
                     <div className='flex flex-col items-center'>
                         <div className='border p-2 border-gris-40 rounded mb-2'>
-                            <input type='file' name='myImage' onChange={onImageChange} />
+                            <input type='file' name='factura' onChange={onImageChange} />
                             <img src={img} alt='img'  className='max-h-40' />
                         </div>
                     </div>
