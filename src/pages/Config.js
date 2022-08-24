@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { PeruData } from '../components/PeruData'
 import { UserContext } from '../UserContext'
@@ -8,6 +8,19 @@ const Config = () => {
     const { user, setUser } = useContext(UserContext)
     const [edit, setEdit] = useState(false)
     const [state, setState] = useState([])
+    const [img, setImg] = useState({});
+    const [preview, setPreview] = useState(false)
+    const fileInputRef = useRef();
+
+    const onImageChange = (e) => {
+        fileInputRef.current.click();
+        const [file] = e.target.files;
+        // setImg({...img, [e.target.name]:e.target.value})
+        setImg(URL.createObjectURL(file));
+        setPreview(true)
+        console.log(img)
+        console.log(file)
+    };
 
     const editData = (e) => {
         e.preventDefault();
@@ -82,7 +95,7 @@ const Config = () => {
                             </div>
                             
                             <div className='flex justify-end'>
-                                <button className='text-verde-secundario border-verde-secundario py-2 px-14 border rounded'>Guardar datos</button>
+                                <button className='text-verde-secundario border-verde-secundario py-2 px-14 border rounded'>Guardar cambios</button>
                             </div>
                         </>
                         :<>
@@ -118,12 +131,66 @@ const Config = () => {
                             </div>
                             
                             <div className='flex justify-end'>
-                                <button onClick={editData} className='text-blanco bg-morado-primario py-2 px-14 border rounded'>Editar datos</button>
+                            <button className='text-verde-secundario border-verde-secundario py-2 px-14 border rounded'>Editar datos</button>
                             </div>
                         </> 
                         }
                     </form>
                     
+                </div>
+                
+            </section>
+            <section className='flex mt-6 space-x-6'>
+                <div className='w-1/2 py-6 px-10 border border-gris-30 rounded-lg'>
+                    <div className='text-lg font-bold text-morado-hover mb-12'>Cambio de contraseña</div>
+                    <div>
+                        <form>
+                            <div className='flex space-y-4 flex-col mb-16'>
+                                <div className='flex flex-col'>
+                                    <input type='password' name='password' value={user.password} onChange={(e) => setUser({...user, [e.target.name]:e.target.value}) } className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2'></input>
+                                </div>
+                                <div className='flex flex-col'>
+                                    <input type='password' name='newPassword' onChange={(e) => setUser({...user, [e.target.name]:e.target.value}) } className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2' placeholder='Escribe tu nueva contraseña'></input>
+                                </div>
+                                <div className='flex flex-col'>
+                                    <input type='password' name='confirmPassword' onChange={(e) => setUser({...user, [e.target.name]:e.target.value}) } className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2' placeholder='Repite tu nueva contraseña'></input>
+                                </div>
+                            </div>
+                            <div className='flex flex-col w-auto mt-10'>
+                                <button className='text-gris-40 border-gris-40 py-2 px-14 border rounded mx-auto'>Editar datos</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div className='w-1/2 py-6 px-10 border border-gris-30 rounded-lg'>
+                    <div className='text-lg font-bold text-morado-hover mb-12'>Foto de perfil</div>
+                    <div>
+                        <form>
+                            <div className='flex space-y-4 flex-col mb-16'>
+                                {preview ? 
+                                    <img src={img} alt='img' className='max-h-40 mx-auto' />
+                                :
+                                <>
+                                <button className='mx-auto' onClick={(e) => {
+                                    e.preventDefault();
+                                    fileInputRef.current.click();
+                                }}>
+                                        <div className='py-7 px-4 border border-dotted border-gris-40 mx-auto w-auto mb-4'>
+                                            <div className='mb-4'>+</div>
+                                            <div className='text-gris-40 text-sm'>Upload</div>
+                                        </div>
+                                        <div className='flex flex-col'>
+                                            <span>Formato PNG, JPG o PDF</span>
+                                            <span>Medida 180x180 px</span>
+                                            <span>Tamaño máximo 2MB</span>
+                                        </div>
+                                </button>
+                                <input type='file' name='reciboLuz' className='hidden' onChange={onImageChange} ref={fileInputRef} />
+                                </>
+                                }
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </section>
         </div>
