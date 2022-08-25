@@ -14,7 +14,7 @@ const Mail = ({ user, setUser, page, setPage }) => {
     <div>
         <section>
             <div className='container mx-auto mt-14 mb-44 max-w-md'>
-                <form onSubmit={handleSubmit}>
+                <div onSubmit={handleSubmit}>
                     <div className='mb-4 text-morado-primario text-3xl font-bold'>Registro</div>
                     <div className='text-gris-80 mb-8'>Tu cuenta gratis en solo tres simples pasos. Tendrás que validar tu email, ten tu bandeja de entrada a la vista. </div>
                     <div className='flex py-4 px-4 items-start bg-gris-10 space-x-4 mb-8'>
@@ -43,7 +43,7 @@ const Mail = ({ user, setUser, page, setPage }) => {
                     <div className='flex justify-center border rounded border-gris-40 w-60 mx-auto'>
                         <button type='submit' className='py-2 px-16 text-gris-40'>Verificar</button>
                     </div>
-                </form>
+                </div>
                 {openModal && <Modal setOpenModal={setOpenModal} />}
                 
             </div>

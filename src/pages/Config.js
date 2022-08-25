@@ -35,6 +35,11 @@ const Config = () => {
         setUser({...user, [e.target.name]:e.target.value})
     }
 
+    const changePassword = (e) => {
+        e.preventDefault()
+        setUser(user.password === "123")
+    }
+
   return (
     <>
         <div className='px-24 my-8'>
@@ -131,7 +136,7 @@ const Config = () => {
                             </div>
                             
                             <div className='flex justify-end'>
-                            <button className='text-verde-secundario border-verde-secundario py-2 px-14 border rounded'>Editar datos</button>
+                                <button className='text-verde-secundario border-verde-secundario py-2 px-14 border rounded'>Editar datos</button>
                             </div>
                         </> 
                         }
@@ -144,7 +149,7 @@ const Config = () => {
                 <div className='w-1/2 py-6 px-10 border border-gris-30 rounded-lg'>
                     <div className='text-lg font-bold text-morado-hover mb-12'>Cambio de contraseña</div>
                     <div>
-                        <form>
+                        <form onSubmit={changePassword}>
                             <div className='flex space-y-4 flex-col mb-16'>
                                 <div className='flex flex-col'>
                                     <input type='password' name='password' value={user.password} onChange={(e) => setUser({...user, [e.target.name]:e.target.value}) } className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2'></input>
@@ -156,9 +161,16 @@ const Config = () => {
                                     <input type='password' name='confirmPassword' onChange={(e) => setUser({...user, [e.target.name]:e.target.value}) } className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2' placeholder='Repite tu nueva contraseña'></input>
                                 </div>
                             </div>
+                            {user.newPassword === user.confirmPassword ?
                             <div className='flex flex-col w-auto mt-10'>
-                                <button className='text-gris-40 border-gris-40 py-2 px-14 border rounded mx-auto'>Editar datos</button>
+                                <button type='submit' className='text-verde-secundario border-verde-secundario py-2 px-14 border rounded mx-auto'>Cambiar contraseña</button>
                             </div>
+                            :
+                            <div className='flex flex-col w-auto mt-10'>
+                                <button className='text-gris-40 border-gris-40 py-2 px-14 border rounded mx-auto'>Cambiar contraseña</button>
+                            </div>
+                            }
+                            
                         </form>
                     </div>
                 </div>
