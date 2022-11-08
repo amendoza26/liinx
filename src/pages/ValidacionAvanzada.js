@@ -27,7 +27,7 @@ const ValidacionAvanzada = () => {
                         <div className='flex space-x-12 mb-16'>
                             <div className='flex flex-1 flex-col'>
                                 <label className='mb-2'><span className='text-naranja-primario'>*</span>Dirección</label>
-                                <input name='address' value={user.address} onChange={(e) => setUser({...user, [e.target.name]:e.target.value}) } className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2' type='text'></input>
+                                <input name='address' value={user.address} onChange={(e) => setUser({...user, [e.target.name]:e.target.value}) } className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2' type='text' required='true'></input>
                             </div>
                             <div className='flex flex-1 flex-col'>
                                 <label className='mb-2'>Distrito</label>
@@ -80,14 +80,13 @@ const ValidacionAvanzada = () => {
                             </div>
                             <div className='flex space-x-12 mb-16'>
                                 <div className='flex flex-1 flex-col'>
-                                    <label className='mb-2'><span className='text-naranja-primario'>*</span>Empresa en la que laboras</label>
-                                    <input name='company' value={user.company} onChange={(e) => setUser({...user, [e.target.name]:e.target.value}) } className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2' type='text'></input>
+                                    <label className='mb-2'><span className='text-naranja-primario'>*</span>RUC</label>
+                                    <input name='company' value={user.ruc} onChange={(e) => setUser({...user, [e.target.name]:e.target.value}) } className='shadow appearance-none border border-gris-40 rounded w-full px-3 py-2' type='text'></input>
                                 </div>
                                 <div className='flex flex-1 flex-col'>
-                                    <label className='mb-2'><span className='text-naranja-primario'>*</span>Actividad económica</label>
-                                    <select name='activity' value={user.activity} onChange={(e) => setUser({...user, [e.target.name]:e.target.value}) } className='shadow border border-gris-40 rounded w-full px-3 py-2'>
-                                        <option>Elegir Actividad</option>
-                                    </select>
+                                    <label className='mb-2'><span className='text-naranja-primario'>*</span>Puesto dentro de la empresa</label>
+                                    <input name='activity' value={user.puesto} onChange={(e) => setUser({...user, [e.target.name]:e.target.value}) } className='shadow border border-gris-40 rounded w-full px-3 py-2'>
+                                    </input>
                                 </div>
                             </div>
                         </>

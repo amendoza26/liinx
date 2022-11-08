@@ -29,6 +29,8 @@ import ValidacionAvanzada from './pages/ValidacionAvanzada';
 import ValidacionStep2 from './components/ValidacionStep2';
 import ValidacionStep3 from './components/ValidacionStep3';
 import Config from './pages/Config';
+import Consentimiento from './pages/Consentimiento';
+import Actividad from './pages/Actividad';
 
 
 function App() {
@@ -81,6 +83,8 @@ function App() {
               <Route path='validacion-step2' element={<ValidacionStep2 />} />
               <Route path='validacion-step3' element={<ValidacionStep3 />} />
               <Route path='configuracion' element={<Config /> } />
+              <Route path='consentimiento' element={<Consentimiento /> } />
+              <Route path='actividad-reciente' element={<Actividad /> } />
             </Route>
           </Routes>
   
