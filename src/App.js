@@ -31,6 +31,7 @@ import ValidacionStep3 from './components/ValidacionStep3';
 import Config from './pages/Config';
 import Consentimiento from './pages/Consentimiento';
 import Actividad from './pages/Actividad';
+import Afiliaciones from './pages/Afiliaciones';
 
 
 function App() {
@@ -85,6 +86,7 @@ function App() {
               <Route path='configuracion' element={<Config /> } />
               <Route path='consentimiento' element={<Consentimiento /> } />
               <Route path='actividad-reciente' element={<Actividad /> } />
+              <Route path='afiliaciones' element={<Afiliaciones /> } />
             </Route>
           </Routes>
   
