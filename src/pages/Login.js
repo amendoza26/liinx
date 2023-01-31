@@ -20,7 +20,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const link = 'https://liinx-back.herokuapp.com'
+            const link = '161.132.171.150:5000'
             // https://liinx-back.herokuapp.com
             // http://localhost:4000
             const data = await axios.post(`${link}/api/user/signIn`, {

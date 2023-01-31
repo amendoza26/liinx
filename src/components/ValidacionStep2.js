@@ -8,19 +8,20 @@ const ValidacionStep2 = () => {
     const fileInputRef = useRef();
     const [selectedFile, setSelectedFile] = useState()
     const [preview, setPreview] = useState();
-    const [dni, setDni] = useState('')
+    const [dniFrontal, setDniFrontal] = useState('')
+    const [reciboLuz, setReciboLuz] = useState('')
 
     useEffect(() => {
-      if (dni) {
+      if (dniFrontal) {
         const reader = new FileReader();
         reader.onloadend = () => {
             setPreview(reader.result)
         }
-        reader.readAsDataURL(dni)
+        reader.readAsDataURL(dniFrontal)
       } else {
         setPreview(null)
       }
-    }, [dni])
+    }, [dniFrontal])
     
 
     useEffect(() => {
@@ -105,10 +106,10 @@ const ValidacionStep2 = () => {
                             <input className='hidden' type='file' name='reciboLuz' accept="image/*" ref={fileInputRef} onChange={(e) => {
                                 const file = e.target.files[0];
                                 if (file) {
-                                    setDni(file)
-                                    console.log(dni)
+                                    setReciboLuz(file)
+                                    console.log(reciboLuz)
                                 }else{
-                                    setDni(null)
+                                    setReciboLuz(null)
                                 }
                             }} />
                             {/* {selectedFile && <img src={preview} alt='img' className='max-h-40 mx-auto' />} */}
