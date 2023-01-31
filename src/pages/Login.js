@@ -23,7 +23,7 @@ const Login = () => {
             const link = '161.132.171.150:5000'
             // https://liinx-back.herokuapp.com
             // http://localhost:4000
-            const data = await axios.post(`${link}/api/user/signIn`, {
+            const data = await axios.post(`161.132.171.150:5000/api/user/signIn`, {
                 ...user,
             })
 
